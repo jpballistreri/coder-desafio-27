@@ -2,16 +2,11 @@ import express from "express";
 import path from "path";
 import routerApi from "../routes/api.js";
 import web from "../routes/web.js";
-//import MongoStore from "connect-mongo";
 import { DBSesiones } from "./db";
-import cookieParser from "cookie-parser";
 import session from "express-session";
 import passport from "../../middlewares/auth";
-
-import { DBService, DBMensajesSqlite } from "./db";
 import * as http from "http";
 import { initWSServer } from "./socket";
-import Config from "../../config";
 
 /** INICIALIZACION API con EXPRESS */
 const app = express();

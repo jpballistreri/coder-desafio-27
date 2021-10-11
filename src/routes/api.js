@@ -1,9 +1,6 @@
 import express from "express";
-import fs from "fs";
 import { DBProductos } from "../services/db";
 import { isLoggedIn } from "../../middlewares/auth";
-import { FakerService } from "../services/faker";
-import UserRouter from "./user";
 import passport from "../../middlewares/auth";
 
 const router = express.Router();

@@ -1,5 +1,3 @@
-import knex from "knex";
-import dbConfig from "../../knexfile";
 import mongoose from "mongoose";
 import MongoStore from "connect-mongo";
 import * as model from "../models/ecommerce";

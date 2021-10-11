@@ -11,10 +11,11 @@ html
         
     body
         h1 MercadoCosas.com
-        include components/navbar
+        include components/navbar        
         if username
             p
                 span Bienvenido #{username} 
                 a(class="btn btn-danger btn-sm" href="/productos/logout" role="button") Logout
         include components/listaProductos
+        
     
