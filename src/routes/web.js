@@ -25,6 +25,31 @@ router.get("/login", async (req, res) => {
   }
 });
 
+router.get("/login-ok-fb", async (req, res) => {
+  let foto = "noPhoto";
+  let email = "noEmail";
+
+  if (req.isAuthenticated()) {
+    const userData = req.user;
+    //reinicio contador
+    if (!userData.contador) userData.contador = 0;
+    userData.contador++;
+
+    if (userData.photos) foto = userData.photos[0].value;
+
+    if (userData.emails) email = userData.emails[0].value;
+
+    res.render("login-ok-fb", {
+      nombre: userData.displayName,
+      contador: userData.contador,
+      foto,
+      email,
+    });
+  } else {
+    res.redirect("/productos/login");
+  }
+});
+
 router.get("/signup", async (req, res) => {
   res.render("signup");
 });
@@ -33,27 +58,31 @@ router.get("/error-login", async (req, res) => {
   res.render("error-login");
 });
 
-router.get("/error-signup", async (req, res) => {
-  res.render("error-signup");
-});
+//router.get("/error-signup", async (req, res) => {
+//  res.render("error-signup");
+//});
 
-router.get("/ok-signup", async (req, res) => {
-  res.render("ok-signup");
-});
+//router.get("/ok-signup", async (req, res) => {
+//  res.render("ok-signup");
+//});
 
 router.get("/logout", (req, res) => {
   req.session.destroy();
+  //req.logout();
   res.redirect("/productos/login");
 });
 
 router.get("/vista", isLoggedIn, async (req, res) => {
-  req.session.contador++;
-  const username = req.user.username;
+  const userData = req.user;
+  userData.contador++;
+  const username = userData.displayName;
   res.render("main", { username });
 });
 
 router.get("/ingreso", isLoggedIn, async (req, res) => {
-  const username = req.user.username;
+  const userData = req.user;
+  userData.contador++;
+  const username = userData.displayName;
   res.render("ingreso", { username });
 });
 

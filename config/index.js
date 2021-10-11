@@ -10,6 +10,8 @@ const venvs = {
   MONGO_ATLAS_CLUSTER: process.env.MONGO_ATLAS_CLUSTER || "xxxxxmongoDb.net",
   MONGO_ATLAS_DBNAME: process.env.MONGO_ATLAS_DBNAME || "dbname",
   SESSION_SECRET_KEY: process.env.SESSION_SECRET_KEY || "session secret key",
+  FACEBOOK_APP_ID: process.env.FACEBOOK_APP_ID || "faceId",
+  FACEBOOK_APP_SECRET: process.env.FACEBOOK_APP_SECRET || "faceSecret",
   PORT: process.env.PORT || 8080,
 };
 

@@ -1,0 +1,28 @@
+html
+    head 
+        meta(charset="urf-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        title Cosas a precios increibles!
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover")
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+        script(src="/socket.io/socket.io.js")
+        script(src="../login.js")
+        link(rel="stylesheet" href="../style.css")
+    body
+        h1 MercadoCosas.com
+        div(class="container text-center my-3")
+            div(class="jumbotron" style="background-color: rgb(191, 226, 191);color: darkgreen;")        
+                h1 USER OK LOGIN!
+                br
+                h2
+                    i Bienvenido #{nombre}
+                br
+                img(src=foto width="100" alt="")
+                br
+                a(href="#") #{email}
+                <br>
+                <br>
+                h4 Visitas: #{contador}
+                a(class="btn btn-danger mt-3" href="/productos/logout")
+                    span(class="fa fa-sign-out")
+                    span Logout

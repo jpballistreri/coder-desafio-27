@@ -76,9 +76,7 @@ export const DBSesiones = {
     mongoOptions: { useNewUrlParser: true, useUnifiedTopology: true },
   }),
   secret: `${Config.SESSION_SECRET_KEY}`,
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-    maxAge: 10000 * 60,
-  },
+  resave: true,
+  saveUninitialized: true,
+  cookie: { httpOnly: false, maxAge: 10000 * 60 },
 };
